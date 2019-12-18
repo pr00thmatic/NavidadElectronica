@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Casa : MonoBehaviour {
+    public Pooled pool;
     public Transform minimo;
     public Transform maximo;
     public GameObject frosty;
@@ -13,11 +14,11 @@ public class Casa : MonoBehaviour {
     public MeshRenderer rend;
 
     void OnEnable () {
-        GetComponent<Pooled>().onPonerAlFinal += Aleatorizar;
+        pool.onPonerAlFinal += Aleatorizar;
     }
 
     void OnDisable () {
-        GetComponent<Pooled>().onPonerAlFinal -= Aleatorizar;
+        pool.onPonerAlFinal -= Aleatorizar;
     }
 
     public void Aleatorizar () {

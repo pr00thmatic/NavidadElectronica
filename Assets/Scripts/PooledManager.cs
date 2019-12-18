@@ -9,7 +9,8 @@ public class PooledManager : MonoBehaviour {
 
     public void Generar () {
         for (int i=0; i<cantidad; i++) {
-            Pooled creado = Instantiate(elFinal);
+            Pooled creado = Instantiate(elFinal.root)
+                .GetComponentInChildren<Pooled>();
             creado.PonerAlFinal();
         }
     }
